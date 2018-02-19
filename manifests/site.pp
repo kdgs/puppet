@@ -4,7 +4,7 @@ node 'master.puppet.local' {
   include role::master_server
   file { '/root/README':
     ensure  => file,
-    content => "Bem vindo ao {$fqdn}\n",
+    content => "Bem vindo ao ${fqdn}\n",
   }
 }
 

@@ -9,8 +9,7 @@ node 'master.puppet.local' {
 }
 
 node 'mc.puppet.vm' {
-
-
+  include role::minecraft_server
 }
 
 node /^web/ {

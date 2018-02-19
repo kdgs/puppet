@@ -8,6 +8,11 @@ node 'master.puppet.local' {
   }
 }
 
+node 'mc.puppet.vm' {
+
+
+}
+
 node /^web/ {
   include role::app_server
   }

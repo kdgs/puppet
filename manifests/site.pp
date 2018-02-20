@@ -12,8 +12,9 @@ node 'mc.puppet.local' {
   include role::minecraft_server
 }
 
-node /^web/ {
+node 'web.puppet.local' {
   include role::app_server
+  include role::java
   }
 node /^db/ {
   include role::db_server

@@ -6,7 +6,19 @@ class profile::base {
     ensure => present,
    }->
   file_line { 'Append a line to /etc/ssh/sshd_config':
+    notify  => Service['sshd'],
     path => '/etc/ssh/sshd_config',  
     line => 'Banner /etc/issue.net',
+  }
+  file {'/etc/issue.net':
+    ensure  => file,
+    source  => 'puppet:///modules/config_geral/issue.net',
+  }
+  file {'/etc/motd':
+    ensure  => file,
+    source  => 'puppet:///modules/config_geral/motd',
+  }
+  service { sshd:
+    ensure => running
   }
 }

@@ -25,6 +25,7 @@ node 'web.puppet.local' {
   include role::app_server
   include java::install
   include tomcat::install
+  include tomcat::service
   
   notify {"Web Node Reached":
     message   => "\n\n\nConfiguração do Node Web!!!!\nTestando instalação de pacotes Java e Tomcat.\n\n\n"

@@ -2,12 +2,12 @@ class tomcat::service {
   service {'tomcat':
     ensure    => running,
     enable    => true,
-    requires  => Package['tomcat'],
+    require  => Package['tomcat'],
   }
 
   service {'tomcat-webapps':
     ensure    => running,
     enable    => true,
-    requires  => Package['tomcat-webapps'],
+    require  => Package['tomcat-webapps'],
   }
 }

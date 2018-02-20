@@ -27,7 +27,7 @@ class profile::base {
     ensure  => absent,
   }
   service { 'ntp':
-    require  => Service['sshd'],
+    require  => Package['ntp'],
     ensure  => running,
     enable  => true,
   }

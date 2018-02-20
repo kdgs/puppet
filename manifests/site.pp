@@ -14,7 +14,7 @@ node 'mc.puppet.local' {
 
 node 'web.puppet.local' {
   include role::app_server
-  include role::java
+  include java::install
   }
 node /^db/ {
   include role::db_server

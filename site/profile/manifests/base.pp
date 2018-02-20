@@ -21,9 +21,8 @@ class profile::base {
   service { sshd:
     ensure  => running
   }
-  package {['tree','wget','git','unzip','ntp']:
-    ensure  => installed,
-  }
+  package {['tree','wget','git','unzip','ntp'] }
+  
   user { 'teste':
     ensure  => absent,
   }

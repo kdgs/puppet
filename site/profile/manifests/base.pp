@@ -28,7 +28,7 @@ class profile::base {
   user { 'teste':
     ensure  => absent,
   }
-  service { 'ntp':
+  service { 'ntpd':
     require  => Package['ntp'],
     ensure  => running,
     enable  => true,
